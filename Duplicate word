@@ -1,0 +1,30 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class DuplicateWord
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+		String str=sc.nextLine();
+		String ab[] = str.split(" ");
+		String a[] = new String[ab.length];
+		int i,j,c=0;
+		for(i=0;i<ab.length;i++){
+		    a[i] = ab[i];      
+		}
+		Arrays.sort(a); 
+		for(i=0;i<a.length;i=i+c){
+		    c=0;
+		    for(j=i;j<a.length;j++){
+		        if(a[i].equals(a[j])){
+		            c++;
+		        } 
+		    }
+		    if(c>1){
+		        System.out.println(a[i]);
+		    }
+		}
+	}
+}
